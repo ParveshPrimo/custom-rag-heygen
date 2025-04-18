@@ -34,11 +34,3 @@ Slammie-Ann is designed for entertainment purposes only. Great for:
 
 This project is entirely fictional and intended for fun. It does **not** represent real individuals or opinions and should not be taken seriously. Ann’s opinions are her own (and completely made-up).
 
-## 🛠️ Tech Stack
-
-- **Language/Framework:** [Insert your tech stack here, e.g., Python, Node.js, etc.]
-- **AI Integration:** [Mention if you're using OpenAI or any other AI API]
-- **Frontend:** [If applicable]
-
-## 📂 Project Structure
-
