@@ -41,7 +41,7 @@ export default function InteractiveAvatar() {
   const [isLoadingSession, setIsLoadingSession] = useState(false);
   const [stream, setStream] = useState<MediaStream>();
   const [debug, setDebug] = useState<string>();
-  const [knowledgeId, setKnowledgeId] = useState<string>("0487280e01ed4eae8c3acd1b339ab0b5");
+  const [knowledgeId, setKnowledgeId] = useState<string>("36c157ae93e24f6fae33d3f502c9ca4c");
   // const [knowledgeId, setKnowledgeId] = useState<string>("0a38b03a1ba345d3960bcbfa97d398cb");
   // const [avatarId, setAvatarId] = useState<string>("Santa_Fireplace_Front_public");
   const [avatarId, setAvatarId] = useState<string>("Ann_Therapist_public");
