@@ -25,7 +25,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Lottie from 'lottie-react';
-import loadingAnimation from '@/public/loading_animation_2.json';
+import loadingAnimation from '@/public/loading_animation_3.json';
 
 import { AVATARS, STT_LANGUAGE_LIST } from "@/app/lib/constants";
 
@@ -207,16 +207,17 @@ export default function InteractiveAvatar() {
             </div>
           ) : isLoadingSession ? (
             <div className="flex justify-center items-center w-full h-full">
-              <Lottie
-                style={{
-                  width: '100px',
-                  height: '100px',
-                  maxWidth: "100%",
-                }}
-                className="max-w-full md:w-[150px] md:h-[150px]"
-                animationData={loadingAnimation}
-                loop={true}
-              />
+           <Lottie
+  style={{
+    width: '200px',  // Increased width
+    height: '200px', // Increased height
+    maxWidth: '100%',
+  }}
+  className="max-w-full md:w-[250px] md:h-[250px]" // Adjusted for medium screens
+  animationData={loadingAnimation}
+  loop={true}
+/>
+
             </div>
           ) : <div>
             <div className="relative w-full h-full flex justify-center items-center rounded-lg overflow-hidden">
