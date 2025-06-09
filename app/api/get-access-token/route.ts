@@ -11,7 +11,7 @@ export async function POST() {
       {
         method: "POST",
         headers: {
-          "x-api-key": HEYGEN_API_KEY,
+          "x-api-key": "ZWUzZmVkODA3MDNmNDI0Nzk1NjhiNzdiOGQyYTBiYWYtMTc0ODM0MjMwMg==",
         },
       },
     );
