@@ -41,10 +41,7 @@ export default function InteractiveAvatar() {
   const [isLoadingSession, setIsLoadingSession] = useState(false);
   const [stream, setStream] = useState<MediaStream>();
   const [debug, setDebug] = useState<string>();
-  const [knowledgeId, setKnowledgeId] = useState<string>("36c157ae93e24f6fae33d3f502c9ca4c");
-  // const [knowledgeId, setKnowledgeId] = useState<string>("0a38b03a1ba345d3960bcbfa97d398cb");
-  // const [avatarId, setAvatarId] = useState<string>("Santa_Fireplace_Front_public");
-  const [avatarId, setAvatarId] = useState<string>("Ann_Therapist_public");
+  const [avatarId, setAvatarId] = useState<string>("Marianne_Chair_Sitting_public");
   const [language, setLanguage] = useState<string>("en");
   const [data, setData] = useState<StartAvatarResponse>();
   const [text, setText] = useState<string>("");
@@ -52,7 +49,7 @@ export default function InteractiveAvatar() {
   const avatar = useRef<StreamingAvatar | null>(null);
   const [chatMode, setChatMode] = useState("text_mode");
   const [isUserTalking, setIsUserTalking] = useState(false);
-  let sessionTimeout: NodeJS.Timeout | null = null; // Declare a variable to hold the timeout ID
+  let sessionTimeout: NodeJS.Timeout | null = null; 
 
   async function fetchAccessToken() {
     try {
@@ -60,7 +57,7 @@ export default function InteractiveAvatar() {
         method: "POST",
       });
       const token = await response.text();
-      console.log("Access Token:", token); // Log the token to verify
+      console.log("Access Token:", token); 
       return token;
     } catch (error) {
       console.error("Error fetching access token:", error);
@@ -74,12 +71,6 @@ export default function InteractiveAvatar() {
 
     avatar.current = new StreamingAvatar({
       token: newToken,
-    });
-    avatar.current.on(StreamingEvents.AVATAR_START_TALKING, (e) => {
-      console.log("Avatar started talking", e);
-    });
-    avatar.current.on(StreamingEvents.AVATAR_STOP_TALKING, (e) => {
-      console.log("Avatar stopped talking", e);
     });
     avatar.current.on(StreamingEvents.STREAM_DISCONNECTED, () => {
       console.log("Stream disconnected");
@@ -101,7 +92,6 @@ export default function InteractiveAvatar() {
       const res = await avatar.current.createStartAvatar({
         quality: AvatarQuality.Medium,
         avatarName: avatarId,
-        knowledgeId: knowledgeId,
         voice: {
           rate: 1.5,
           emotion: VoiceEmotion.EXCITED,
@@ -116,10 +106,9 @@ export default function InteractiveAvatar() {
       });
       setChatMode("voice_mode");
 
-      // Automatically end the session after 10 minutes
       sessionTimeout = setTimeout(() => {
         endSession();
-      }, 10 * 60 * 1000); // 10 minutes in milliseconds
+      }, 10 * 60 * 1000); 
     } catch (error) {
       console.error("Error starting avatar session:", error);
     } finally {
@@ -129,8 +118,8 @@ export default function InteractiveAvatar() {
 
   async function endSession() {
     if (sessionTimeout) {
-      clearTimeout(sessionTimeout); // Clear the timeout if it exists
-      sessionTimeout = null; // Reset the timeout variable
+      clearTimeout(sessionTimeout);
+      sessionTimeout = null; 
     }
     await avatar.current?.stopAvatar();
     setStream(undefined);
@@ -141,10 +130,6 @@ export default function InteractiveAvatar() {
       endSession();
     };
   }, []);
-
-  // useEffect(() => {
-  //   startSession();
-  // }, [avatarId, knowledgeId]);
 
   useEffect(() => {
     if (stream && mediaStream.current) {
@@ -172,22 +157,7 @@ export default function InteractiveAvatar() {
             <SelectItem key={lang.key}>{lang.label}</SelectItem>
           ))}
         </Select>
-        {/* <div className="flex justify-center flex-grow">
-          <Link isExternal aria-label="RivalSlam" href="https://www.rivalslam.com/">
-            <Image
-              src={"/Santa-R-Logo.png"}
-              alt="rivalista logo"
-              width={170}
-              height={70}
-              style={{
-                width: "40px",
-                height: "auto",
-                maxWidth: "100%"
-              }}
-              className="md:w-[170px]"
-            />
-          </Link>
-        </div> */}
+ 
         <p style={{ color: "rgba(255, 255, 255, 0.5)", fontSize: "0.8em", textAlign: "right" }} className="md:w-[20%]">
           <i>BETA</i>
         </p>
@@ -209,11 +179,11 @@ export default function InteractiveAvatar() {
             <div className="flex justify-center items-center w-full h-full">
            <Lottie
   style={{
-    width: '200px',  // Increased width
-    height: '200px', // Increased height
+    width: '200px',  
+    height: '200px', 
     maxWidth: '100%',
   }}
-  className="max-w-full md:w-[250px] md:h-[250px]" // Adjusted for medium screens
+  className="max-w-full md:w-[250px] md:h-[250px]" 
   animationData={loadingAnimation}
   loop={true}
 />
@@ -221,32 +191,16 @@ export default function InteractiveAvatar() {
             </div>
           ) : <div>
             <div className="relative w-full h-full flex justify-center items-center rounded-lg overflow-hidden">
-              <Image
-                // src={"/santa-image.webp"}
-                src={"/ann_therepist.webp"}
-                alt="santa image"
-                width={1000}
-                height={1000}
-                className="w-full h-full object-contain md:object-cover"
-                style={{
-                  maxHeight: "100%",
-                }}
-              />
+            
             </div>
           </div>}
         </CardBody>
       </Card>
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
         <p
-          // className={`${unifrakturMaguntia.variable} font-unifraktur text-center md:text-left`}
           className="text-white text-center md:text-left font-sans text-xl md:text-2xl font-semibold"
-          // style={{
-          //   color: "#6ac640",
-          // }}
+    
         >
-   <span className="text-lg md:text-2xl" style={{ marginRight: 10 }}>Ann Therapist is in.</span>
-<span className="text-sm md:text-2xl" style={{ marginRight: 10}}>Time to</span>{""}
-<span className="text-lg md:text-2xl">face the facts, fanboy.</span>
 
         </p>
         <Button

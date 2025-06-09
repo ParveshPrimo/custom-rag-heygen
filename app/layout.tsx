@@ -29,41 +29,23 @@ const barlowCondensed = Barlow_Condensed({
   weight: "700",
 });
 
-// export const metadata: Metadata = {
-//   title: 'Santa`s Sports Roast – Get Your Teams Toasted by a Rude, Witty Santa',
-//   description: 'Let Santa go rogue on your favorite teams! Enjoy snappy, ruthless sports trash-talk in a hilarious webapp that redefines holiday cheer. Try it now.',
-//   icons: {
-//     icon: '/favicon.ico',
-//   },
-//   keywords: 'Santa sports roast, sports trash-talk, humorous sports commentary, witty sports insults, holiday sports humor',
-//   openGraph: {
-//     title: 'Santas Ruthless Sports Roast',
-//     description: 'Ditch the milk and cookies—this Santa serves up sarcastic, snarky, and hilarious takedowns of your favorite teams, players, and fanbases. Get ready to laugh!',
-//     images: [],
-//   },
-//   twitter: {
-//     card: 'summary_large_image',
-//     title: 'Santa`s Sports Roast',
-//     description: 'Snarky, irreverent Santa is here to dish out ruthless sports insults. Dare to let him roast your beloved team?'
-//   },
-// };
 
 export const metadata: Metadata = {
-  title: "Ann Therapist – Ruthless Sports Therapy Sessions",
-  description: "Get your favorite teams analyzed and annihilated by Ann Therapist. She’s got the sass, the smarts, and zero chill when it comes to your sports obsessions. Therapy has never been this savage.",
+  title: "HeyGen Custom RAG",
+  description: "HeyGen Custom RAG",
   icons: {
     icon: '/favicon.ico',
   },
-  keywords: 'Ann Therapist, sports roast, witty sports therapy, humorous sports analysis, savage sports commentary',
+  keywords: 'HeyGen Custom RAG',
   openGraph: {
-    title: "Ann Therapist – Savage Sports Therapy",
-    description: "She’s not here to heal—Ann Therapist serves unfiltered sports takedowns with a side of sass. Book your session and get roasted.",
+    title: "HeyGen Custom RAG",
+    description: "HeyGen Custom RAG",
     images: [],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Ann Therapist – Sports Therapy with a Bite",
-    description: "Tired of biased analysts? Ann tells it like it is. Sharp, witty, and downright ruthless. Your team needs therapy—Ann's style."
+    title: "HeyGen Custom RAG",
+    description: "HeyGen Custom RAG"
   },
 };
 
