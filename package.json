@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm install --legacy-peer-deps && next build",
+    "build": "npm install --force && next build",
     "start": "PORT=3001 next start",
     "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix",
     "deploy": "gh-pages -d out"
