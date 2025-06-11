@@ -40,6 +40,7 @@ export default function InteractiveAvatar() {
   const { theme } = useTheme();
   const [isLoadingSession, setIsLoadingSession] = useState(false);
   const [stream, setStream] = useState<MediaStream>();
+  const [knowledgeId, setKnowledgeId] = useState<string>("5c1de5a6cf5d47c890c8c1f6b3f2adbb");
   const [debug, setDebug] = useState<string>();
   const [avatarId, setAvatarId] = useState<string>("Marianne_Chair_Sitting_public");
   const [language, setLanguage] = useState<string>("en");
@@ -91,6 +92,7 @@ export default function InteractiveAvatar() {
     try {
       const res = await avatar.current.createStartAvatar({
         quality: AvatarQuality.Medium,
+        knowledgeId: knowledgeId,
         avatarName: avatarId,
         voice: {
           rate: 1.5,
@@ -222,3 +224,5 @@ export default function InteractiveAvatar() {
     </div>
   );
 }
+
+
